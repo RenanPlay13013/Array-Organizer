@@ -12,19 +12,20 @@ fs.readFile(filePath, "utf8", (err, data) => {
         console.error("❌ Erro ao ler o arquivo: ", err)
     }
 
-    const materials = data.split("\n").map(item => item.trim()).filter(item => item !== "");
+    const materials = data.split("\n")
+    .map(item => item.trim()).filter(item => item !== "" && item !== "\r")
+    .map(item => item.replace(/["]/g, ""))
+    .map(item => item.replace(/[,]/g, ""))
     console.log("✅ Materiais Importados com sucess")
 
 
 
     function getSeedMaterial(string) { 
-        return string.replace(/^mysticalagriculture:|_seeds$/g, "");
+        return `"${string.replace(/^mysticalagriculture:|_seeds$/g, "")}",`;
     }
     
     if (commandSepareToggle) { 
 
-        var resultado = materials.map(seed => getSeedMaterial(seed)).join("\n");
-    } else { 
         var resultado = materials.map(seed => getSeedMaterial(seed)).join("\n");
     }
     
