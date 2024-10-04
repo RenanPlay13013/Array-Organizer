@@ -1,0 +1,12 @@
+{
+  "name": "d",
+  "version": "1.0.0",
+  "main": "getSeedMaterials.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "RenanPlay13013",
+  "license": "MIT",
+  "description": "README.md"
+}
