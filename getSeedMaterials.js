@@ -23,7 +23,7 @@ fs.readFile(filePath, "utf8", (err, data) => {
     
     if (commandSepareToggle) { 
 
-        var resultado = materials.map(seed => getSeedMaterial(seed)).join(",\n");
+        var resultado = materials.map(seed => getSeedMaterial(seed)).join("\n");
     } else { 
         var resultado = materials.map(seed => getSeedMaterial(seed)).join("\n");
     }
@@ -39,4 +39,3 @@ fs.readFile(filePath, "utf8", (err, data) => {
         console.log("✅ Arquivo escrito com sucesso")
     })
 })
-
